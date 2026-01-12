@@ -1,0 +1,87 @@
+.register-content {
+  --background: #FFFFFF;
+}
+
+.main-container {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // Centrado verticalmente
+  min-height: 100%;
+}
+
+.header-section {
+  margin-bottom: 40px;
+  text-align: center;
+
+  .page-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.custom-label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+  padding-left: 4px;
+}
+
+// Estilo Input "Cajita" (Consistente con Ingresos)
+.custom-input {
+  --background: #F5F5F5;
+  border-radius: 12px;
+  border: 1px solid #E0E0E0;
+  height: 55px;
+  
+  .input-icon {
+    color: #4CAF50; // Iconos verdes
+    margin-right: 8px;
+  }
+
+  ion-input {
+    --padding-start: 5px;
+  }
+}
+
+.btn-primary {
+  margin-top: 30px;
+  --background: #4CAF50;
+  --border-radius: 12px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  --box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+
+  .link-text {
+    color: #2196F3; // Azul secundario para links
+    font-weight: bold;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true" class="register-content">
+  
+  <div class="main-container">
+    
+    <div class="header-section">
+      <h1 class="page-title">Crear Cuenta</h1>
+      <p class="subtitle">Únete a Ahorro Pobre y gestiona tus finanzas.</p>
+    </div>
+
+    <div class="form-container">
+      
+      <div class="input-group">
+        <ion-label class="custom-label">Nombre Completo</ion-label>
+        <ion-item lines="none" class="custom-input">
+          <ion-icon slot="start" name="person-outline" class="input-icon"></ion-icon>
+          <ion-input 
+            type="text" 
+            placeholder="Ej. Juan Pérez"
+            [(ngModel)]="usuario.nombre">
+          </ion-input>
+        </ion-item>
+      </div>
+
+      <div class="input-group">
+        <ion-label class="custom-label">Correo Electrónico</ion-label>
+        <ion-item lines="none" class="custom-input">
+          <ion-icon slot="start" name="mail-outline" class="input-icon"></ion-icon>
+          <ion-input 
+            type="email" 
+            placeholder="ejemplo@correo.com"
+            [(ngModel)]="usuario.email">
+          </ion-input>
+        </ion-item>
+      </div>
+
+      <div class="input-group">
+        <ion-label class="custom-label">Contraseña</ion-label>
+        <ion-item lines="none" class="custom-input">
+          <ion-icon slot="start" name="lock-closed-outline" class="input-icon"></ion-icon>
+          <ion-input 
+            type="password" 
+            placeholder="******"
+            [(ngModel)]="usuario.password">
+          </ion-input>
+        </ion-item>
+      </div>
+
+      <ion-button expand="block" class="btn-primary" (click)="registrar()">
+        Registrarse
+      </ion-button>
+
+      <div class="login-link">
+        <ion-text color="medium">¿Ya tienes cuenta? </ion-text>
+        <span class="link-text">Inicia Sesión</span>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>

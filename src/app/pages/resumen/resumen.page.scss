@@ -1,0 +1,95 @@
+ion-toolbar {
+  --background: #FFFFFF;
+}
+
+.resumen-content {
+  --background: #FFFFFF;
+}
+
+.main-container {
+  padding: 10px 20px 80px 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+
+  .page-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+  }
+
+  .btn-calendar {
+    color: #333;
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+}
+
+.transactions-list {
+  background: transparent;
+  padding: 0;
+}
+
+.transaction-item {
+  --background: #F9F9F9; // Fondo gris claro para cada item
+  --border-radius: 12px;
+  --padding-start: 15px;
+  --inner-padding-end: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+
+  .icon-box {
+    background-color: #E8F5E9; // Fondo verde muy claro
+    color: #4CAF50; // Icono verde
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  ion-label {
+    h2 {
+      font-weight: 600;
+      font-size: 16px;
+      color: #333;
+    }
+    p {
+      font-size: 14px;
+      color: #888;
+    }
+  }
+
+  .amount-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #D32F2F; // Rojo para gastos
+    opacity: 1; // Para asegurar que se vea el color
+  }
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 50px;
+  color: #999;
+  font-size: 16px;
+}
+
+// Estilos Footer
+ion-tab-bar {
+  --background: #FFFFFF;
+  border-top: 1px solid #E0E0E0;
+}
+
+ion-tab-button {
+  --color: #999;
+  --color-selected: #4CAF50;
+}

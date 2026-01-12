@@ -1,0 +1,114 @@
+ion-toolbar {
+  --background: #FFFFFF;
+}
+
+.home-content {
+  --background: #FFFFFF;
+}
+
+.main-container {
+  padding: 10px 20px 80px 20px; // Padding extra abajo para que no choque con el footer
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.greeting {
+  align-self: flex-start;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+// Tarjeta Rectangular (Gastos)
+.card-gastos {
+  width: 100%;
+  border: 2px solid #333; // Estilo boceto
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:active {
+    background-color: #e0e0e0; // Efecto visual al presionar
+  }
+
+  .monto-gastos {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .label-gastos {
+    font-size: 18px;
+    color: #666;
+  }
+}
+
+// Contenedor y Círculo (Ahorro)
+.circle-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+
+  .ahorro-circle {
+    width: 200px; // Ligeramente más grande para destacar
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+    .symbol {
+      font-size: 45px;
+      color: #4CAF50; // Verde Principal
+      margin-bottom: 5px;
+    }
+
+    .monto-ahorro {
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+    }
+  }
+
+  .label-ahorro {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #666;
+  }
+}
+
+// Footer Tabs
+ion-tab-bar {
+  --background: #FFFFFF;
+  border-top: 1px solid #E0E0E0;
+  height: 60px;
+}
+
+ion-tab-button {
+  --color: #999;
+  --color-selected: #4CAF50; // Verde activo
+  
+  ion-icon {
+    font-size: 26px;
+    margin-bottom: 4px;
+  }
+  
+  ion-label {
+    font-size: 12px;
+  }
+}

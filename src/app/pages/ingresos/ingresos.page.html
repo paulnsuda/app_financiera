@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true" class="ingresos-content">
+  
+  <div class="main-container">
+    <h1 class="page-title">Bienvenido<br>Ahorro Pobre <span class="dolar-sign">$</span></h1>
+
+    <div class="form-container">
+      
+      <div class="input-group">
+        <ion-label class="custom-label">Ingreso Mensual</ion-label>
+        <ion-item lines="none" class="custom-input">
+          <span slot="start" class="currency-symbol">$</span>
+          <ion-input 
+            type="number" 
+            placeholder="0.00"
+            [(ngModel)]="ingresoMensual">
+          </ion-input>
+        </ion-item>
+      </div>
+
+      <div class="input-group">
+        <ion-label class="custom-label">Otros Ingresos</ion-label>
+        <ion-item lines="none" class="custom-input">
+          <span slot="start" class="currency-symbol">$</span>
+          <ion-input 
+            type="number" 
+            placeholder="0.00"
+            [(ngModel)]="otrosIngresos">
+          </ion-input>
+        </ion-item>
+      </div>
+
+      <div class="input-group">
+        <ion-label class="custom-label">Meta de Ahorro Mensual</ion-label>
+        <ion-item lines="none" class="custom-input">
+          <span slot="start" class="currency-symbol">$</span>
+          <ion-input 
+            type="number" 
+            placeholder="0.00"
+            [(ngModel)]="metaAhorro">
+          </ion-input>
+        </ion-item>
+      </div>
+
+      <ion-button expand="block" class="btn-guardar" (click)="guardarDatos()">
+        Guardar
+      </ion-button>
+
+    </div>
+  </div>
+
+</ion-content>

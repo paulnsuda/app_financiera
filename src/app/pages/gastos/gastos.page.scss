@@ -1,0 +1,105 @@
+ion-toolbar {
+  --background: #FFFFFF;
+}
+
+.gastos-content {
+  --background: #FFFFFF;
+}
+
+.main-container {
+  padding: 10px 20px 80px 20px; // Padding inferior para el footer
+}
+
+.page-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.custom-label {
+  font-size: 16px;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+
+// Estilo unificado para Input y Select (Cajitas)
+.custom-input-box {
+  background-color: #F5F5F5;
+  border: 1px solid #E0E0E0;
+  border-radius: 12px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  margin-bottom: 10px;
+
+  .currency-symbol {
+    font-size: 20px;
+    color: #4CAF50; // Verde
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  ion-input {
+    font-size: 18px;
+    --padding-start: 0;
+  }
+
+  // Ajustes específicos para el Select
+  &.select-box {
+    ion-select {
+      width: 100%;
+      font-size: 16px;
+      color: #333;
+    }
+  }
+}
+
+// Estilo del Calendario
+.calendar-container {
+  border: 1px solid #E0E0E0;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+
+  ion-datetime {
+    --background: #FFFFFF;
+    --background-rgb: 255, 255, 255;
+    border-radius: 16px;
+    
+    // Personalización de colores del calendario
+    --ion-color-primary: #4CAF50; // Verde al seleccionar fecha
+  }
+}
+
+.btn-guardar {
+  margin-top: 10px;
+  --background: #4CAF50;
+  --border-radius: 12px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  --box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+// Estilos del Footer
+ion-tab-bar {
+  --background: #FFFFFF;
+  border-top: 1px solid #E0E0E0;
+}
+
+ion-tab-button {
+  --color: #999;
+  --color-selected: #4CAF50;
+}

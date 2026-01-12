@@ -1,0 +1,75 @@
+.ingresos-content {
+  --background: #FFFFFF;
+}
+
+.main-container {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  
+  .dolar-sign {
+    color: #4CAF50; // El verde del logo
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; // Espacio entre campos
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.custom-label {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  padding-left: 4px;
+}
+
+// Estilo tipo "cajita" para los inputs
+.custom-input {
+  --background: #F5F5F5; // Un gris muy claro para el fondo del input
+  border-radius: 12px;
+  border: 1px solid #E0E0E0;
+  height: 55px;
+  display: flex;
+  align-items: center;
+
+  .currency-symbol {
+    font-size: 18px;
+    color: #4CAF50; // Símbolo $ verde
+    font-weight: bold;
+    margin-right: 5px;
+    padding-left: 10px;
+  }
+
+  ion-input {
+    --padding-start: 5px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.btn-guardar {
+  margin-top: 40px;
+  --background: #4CAF50; // Verde Principal
+  --border-radius: 12px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  --box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}

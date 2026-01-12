@@ -1,0 +1,65 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="menu-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="irAPerfil()">
+        <ion-icon slot="icon-only" name="person-circle-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="home-content">
+  
+  <div class="main-container">
+    
+    <h1 class="greeting">Hola {{ nombreUsuario }}</h1>
+
+    <div class="card-gastos" (click)="irAReportes()">
+      <div class="monto-gastos">
+        $ {{ totalGastos | number:'1.2-2' }}
+      </div>
+      <div class="label-gastos">Total Gastos</div>
+    </div>
+
+    <div class="circle-wrapper">
+      <div class="ahorro-circle">
+        <div class="symbol">$</div>
+        <div class="monto-ahorro">{{ totalAhorro | number:'1.2-2' }}</div>
+      </div>
+      <p class="label-ahorro">Total Ahorro</p>
+    </div>
+
+    <ion-button expand="block" fill="outline" class="btn-ingresos" (click)="irAIngresos()">
+      Editar Ingresos / Meta
+    </ion-button>
+
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    
+    <ion-tab-button (click)="irAReportes()">
+      <ion-icon name="document-text-outline"></ion-icon>
+      <ion-label>Reportes</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button selected="true">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="irAConfiguracion()">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label>Config.</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-footer>

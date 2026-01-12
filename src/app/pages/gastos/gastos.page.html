@@ -1,0 +1,83 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="menu-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="person-circle-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="gastos-content">
+  
+  <div class="main-container">
+    
+    <h1 class="page-title">Registro de Gastos</h1>
+
+    <div class="form-wrapper">
+
+      <ion-label class="custom-label">Ingresa cantidad</ion-label>
+      <div class="custom-input-box">
+        <span class="currency-symbol">$</span>
+        <ion-input 
+          type="number" 
+          placeholder="0.00" 
+          [(ngModel)]="monto">
+        </ion-input>
+      </div>
+
+      <ion-label class="custom-label">Categoría de gastos</ion-label>
+      <div class="custom-input-box select-box">
+        <ion-select placeholder="Selecciona..." interface="action-sheet" [(ngModel)]="categoria">
+          <ion-select-option value="Comida">Comida</ion-select-option>
+          <ion-select-option value="Transporte">Transporte</ion-select-option>
+          <ion-select-option value="Ocio">Ocio</ion-select-option>
+          <ion-select-option value="Servicios">Servicios</ion-select-option>
+          <ion-select-option value="Otros">Otros</ion-select-option>
+        </ion-select>
+      </div>
+
+      <ion-label class="custom-label">Fecha de Gasto</ion-label>
+      <div class="calendar-container">
+        <ion-datetime 
+          presentation="date" 
+          [(ngModel)]="fecha"
+          locale="es-ES"
+          size="cover">
+        </ion-datetime>
+      </div>
+
+      <ion-button expand="block" class="btn-guardar" (click)="guardarGasto()">
+        Guardar Gasto
+      </ion-button>
+
+    </div>
+
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button (click)="irAReportes()">
+      <ion-icon name="document-text-outline"></ion-icon>
+      <ion-label>Reportes</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="irAHome()">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="irAConfig()">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label>Config.</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
