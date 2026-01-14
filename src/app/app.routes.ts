@@ -3,8 +3,15 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'splash',
+    // CAMBIO 1: Redirigimos directo al Tab1 para ver el botón de Google
+    // (Saltamos el splash temporalmente para probar la autenticación)
+    redirectTo: 'tab1', 
     pathMatch: 'full',
+  },
+  {
+    // CAMBIO 2: Agregamos la ruta del Tab1 donde pusimos el código
+    path: 'tab1',
+    loadComponent: () => import('./tab1/tab1.page').then(m => m.Tab1Page)
   },
   {
     path: 'splash',
@@ -27,22 +34,7 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/gastos/gastos.page').then( m => m.GastosPage)
   },
   {
-    // IMPORTANTE: La ruta se llama 'reportes' para coincidir con tu menú,
-    // pero carga la página 'Resumen' que acabamos de crear.
     path: 'reportes',
     loadComponent: () => import('./pages/resumen/resumen.page').then( m => m.ResumenPage)
   },
-  
-  // --- Espacio para futuras páginas (Configuración / Perfil) ---
-  // Cuando las crees con "ionic generate page...", agrégalas aquí abajo:
-  /*
-  {
-    path: 'configuracion',
-    loadComponent: () => import('./pages/configuracion/configuracion.page').then( m => m.ConfiguracionPage)
-  },
-  {
-    path: 'perfil',
-    loadComponent: () => import('./pages/perfil/perfil.page').then( m => m.PerfilPage)
-  },
-  */
 ];

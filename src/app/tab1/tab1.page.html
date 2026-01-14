@@ -1,17 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div *ngIf="!(authService.user$ | async)" class="ion-text-center login-box">
+  <img src="assets/icon/favicon.png" style="width: 100px; margin-top: 50px;">
+  <h1>Mi App Financiera</h1>
+  <ion-button (click)="login()" expand="block" shape="round">
+    <ion-icon slot="start" name="logo-google"></ion-icon>
+    Entrar con Google
+  </ion-button>
+</div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<div *ngIf="authService.user$ | async as user">
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title>Hola, {{ user.displayName }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+  <ion-content>
+    <p>Tu balance actual es...</p>
+  </ion-content>
+</div>

@@ -1,13 +1,19 @@
-import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { Component, inject } from '@angular/core';
+import { AuthService } from '../services/auth'; // El servicio que creamos
+import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
+  standalone: true,
+  imports: [IonicModule, CommonModule]
 })
 export class Tab1Page {
-  constructor() {}
+  // Inyectamos el servicio para usarlo en el HTML
+  public authService = inject(AuthService);
+
+  async login() {
+    await this.authService.loginConGoogle();
+  }
 }
