@@ -1,40 +1,42 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './guards/auth-guard'; // <--- Importamos al policía (Guardia)
 
 export const routes: Routes = [
   {
     path: '',
-    // CAMBIO 1: Redirigimos directo al Tab1 para ver el botón de Google
-    // (Saltamos el splash temporalmente para probar la autenticación)
-    redirectTo: 'tab1', 
+    redirectTo: 'tab1', // Al entrar, nos vamos directo al Login
     pathMatch: 'full',
   },
   {
-    // CAMBIO 2: Agregamos la ruta del Tab1 donde pusimos el código
-    path: 'tab1',
+    path: 'tab1', // PÁGINA DE ACCESO (Login/Registro) - Pública
     loadComponent: () => import('./tab1/tab1.page').then(m => m.Tab1Page)
   },
   {
-    path: 'splash',
+    path: 'splash', // Splash Screen - Pública
     loadComponent: () => import('./pages/splash/splash.page').then( m => m.SplashPage)
   },
   {
-    path: 'register',
+    path: 'home', // DASHBOARD - ¡PROTEGIDA!
+    loadComponent: () => import('./pages/home/home.page').then( m => m.HomePage),
+    canActivate: [authGuard] // <--- Si no hay login, el guardia no te deja pasar
+  },
+  {
+    path: 'ingresos', // INGRESOS - ¡PROTEGIDA!
+    loadComponent: () => import('./pages/ingresos/ingresos.page').then( m => m.IngresosPage),
+    canActivate: [authGuard]
+  },
+  {
+    path: 'gastos', // GASTOS - ¡PROTEGIDA!
+    loadComponent: () => import('./pages/gastos/gastos.page').then( m => m.GastosPage),
+    canActivate: [authGuard]
+  },
+  {
+    path: 'reportes', // RESUMEN - ¡PROTEGIDA!
+    loadComponent: () => import('./pages/resumen/resumen.page').then( m => m.ResumenPage),
+    canActivate: [authGuard]
+  },
+  {
+    path: 'register', // Página de registro antigua (por si acaso) - Pública
     loadComponent: () => import('./pages/register/register.page').then( m => m.RegisterPage)
-  },
-  {
-    path: 'ingresos',
-    loadComponent: () => import('./pages/ingresos/ingresos.page').then( m => m.IngresosPage)
-  },
-  {
-    path: 'home',
-    loadComponent: () => import('./pages/home/home.page').then( m => m.HomePage)
-  },
-  {
-    path: 'gastos',
-    loadComponent: () => import('./pages/gastos/gastos.page').then( m => m.GastosPage)
-  },
-  {
-    path: 'reportes',
-    loadComponent: () => import('./pages/resumen/resumen.page').then( m => m.ResumenPage)
   },
 ];

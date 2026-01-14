@@ -1,20 +1,89 @@
-<div *ngIf="!(authService.user$ | async)" class="ion-text-center login-box">
-  <img src="assets/icon/favicon.png" style="width: 100px; margin-top: 50px;">
-  <h1>Mi App Financiera</h1>
-  <ion-button (click)="login()" expand="block" shape="round">
-    <ion-icon slot="start" name="logo-google"></ion-icon>
-    Entrar con Google
-  </ion-button>
-</div>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Acceso</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<div *ngIf="authService.user$ | async as user">
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-title>Hola, {{ user.displayName }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
 
-  <ion-content>
-    <p>Tu balance actual es...</p>
-  </ion-content>
-</div>
+  <div *ngIf="!(authService.user$ | async)" class="ion-text-center animate__animated animate__fadeIn">
+    
+    <div style="margin-top: 40px; margin-bottom: 20px;">
+      <ion-icon name="wallet-outline" style="font-size: 80px; color: #3880ff;"></ion-icon>
+      <h1>Mi App Financiera</h1>
+      <p class="ion-text-muted">Controla tus gastos e ingresos</p>
+    </div>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-list lines="none">
+          
+          <ion-item>
+            <ion-icon name="mail-outline" slot="start" color="medium"></ion-icon>
+            <ion-input 
+              label="Correo" 
+              labelPlacement="stacked" 
+              [(ngModel)]="email" 
+              type="email" 
+              placeholder="tu@correo.com">
+            </ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-icon name="lock-closed-outline" slot="start" color="medium"></ion-icon>
+            <ion-input 
+              label="Contraseña" 
+              labelPlacement="stacked" 
+              [(ngModel)]="password" 
+              type="password"
+              placeholder="******">
+            </ion-input>
+          </ion-item>
+
+        </ion-list>
+
+        <div style="margin-top: 20px;">
+          <ion-button expand="block" (click)="ingresar()" shape="round">
+            Iniciar Sesión
+          </ion-button>
+          
+          <ion-button expand="block" fill="outline" (click)="registrarse()" shape="round" class="ion-margin-top">
+            Crear Cuenta Nueva
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="ion-padding-vertical">
+      <p class="ion-text-muted" style="font-size: 0.9em;">— O continúa con —</p>
+    </div>
+
+    <ion-button expand="block" color="danger" (click)="loginGoogle()" shape="round">
+      <ion-icon slot="start" name="logo-google"></ion-icon>
+      Google
+    </ion-button>
+
+  </div>
+
+
+  <div *ngIf="authService.user$ | async as user" class="ion-text-center ion-padding-top">
+    
+    <ion-avatar style="margin: 0 auto; width: 100px; height: 100px; margin-top: 50px;">
+      <img [src]="user.photoURL ? user.photoURL : 'https://ionicframework.com/docs/img/demos/avatar.svg'" />
+    </ion-avatar>
+    
+    <h1>¡Hola, {{ user.displayName || 'Usuario' }}!</h1>
+    <p>{{ user.email }}</p>
+
+    <ion-chip color="success">
+      <ion-icon name="checkmark-circle"></ion-icon>
+      <ion-label>Sesión Activa</ion-label>
+    </ion-chip>
+
+    <ion-button color="medium" expand="block" fill="clear" (click)="authService.logout()" style="margin-top: 50px;">
+      <ion-icon slot="start" name="log-out-outline"></ion-icon>
+      Cerrar Sesión
+    </ion-button>
+  </div>
+
+</ion-content>
